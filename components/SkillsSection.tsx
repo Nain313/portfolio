@@ -24,34 +24,34 @@ const technologies = [
 
 export default function SkillsSection() {
   return (
-    <section id="skills" className="min-h-screen flex items-center justify-center relative py-10 sm:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="skills" className="min-h-screen flex items-center justify-center relative py-8 sm:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <motion.div
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-8 sm:mb-16"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4">
             My <span className="gradient-text">Skills</span>
           </h2>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto px-4">
-            A blend of technical expertise and essential soft skills for modern AI-powered web development.
+          <p className="text-sm sm:text-lg lg:text-xl text-gray-300 max-w-3xl mx-auto px-2 sm:px-4 leading-relaxed">
+            A blend of technical expertise and essential soft skills for modern development.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12">
           {/* Technical Skills */}
           <motion.div
-            className="glass rounded-2xl p-6 sm:p-8"
+            className="glass rounded-2xl p-4 sm:p-6 lg:p-8"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl sm:text-2xl font-bold gradient-text mb-6 sm:mb-8">Technical Skills</h3>
-            <div className="space-y-4 sm:space-y-6">
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold gradient-text mb-4 sm:mb-6 lg:mb-8">Technical Skills</h3>
+            <div className="space-y-3 sm:space-y-4 lg:space-y-6">
               {technicalSkills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
@@ -61,16 +61,16 @@ export default function SkillsSection() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="flex items-center justify-between flex-wrap gap-2">
+                  <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
                       <skill.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
-                      <span className="text-gray-300 text-sm sm:text-base truncate">{skill.name}</span>
+                      <span className="text-gray-300 text-xs sm:text-sm lg:text-base break-words">{skill.name}</span>
                     </div>
-                    <span className="text-primary font-semibold text-sm sm:text-base flex-shrink-0">{skill.percentage}%</span>
+                    <span className="text-primary font-semibold text-xs sm:text-sm lg:text-base flex-shrink-0 ml-2">{skill.percentage}%</span>
                   </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
+                  <div className="w-full bg-gray-700 rounded-full h-1.5 sm:h-2">
                     <motion.div
-                      className="bg-primary h-2 rounded-full"
+                      className="bg-primary h-1.5 sm:h-2 rounded-full"
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.percentage}%` }}
                       transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
@@ -84,14 +84,14 @@ export default function SkillsSection() {
 
           {/* Soft Skills */}
           <motion.div
-            className="glass rounded-2xl p-6 sm:p-8"
+            className="glass rounded-2xl p-4 sm:p-6 lg:p-8"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl sm:text-2xl font-bold gradient-text mb-6 sm:mb-8">Soft Skills</h3>
-            <div className="space-y-4 sm:space-y-6">
+            <h3 className="text-lg sm:text-xl lg:text-2xl font-bold gradient-text mb-4 sm:mb-6 lg:mb-8">Soft Skills</h3>
+            <div className="space-y-3 sm:space-y-4 lg:space-y-6">
               {softSkills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
@@ -101,16 +101,16 @@ export default function SkillsSection() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                 >
-                  <div className="flex items-center justify-between flex-wrap gap-2">
+                  <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
                       <skill.icon className="w-4 h-4 sm:w-5 sm:h-5 text-primary flex-shrink-0" />
-                      <span className="text-gray-300 text-sm sm:text-base truncate">{skill.name}</span>
+                      <span className="text-gray-300 text-xs sm:text-sm lg:text-base break-words">{skill.name}</span>
                     </div>
-                    <span className="text-primary font-semibold text-sm sm:text-base flex-shrink-0">{skill.percentage}%</span>
+                    <span className="text-primary font-semibold text-xs sm:text-sm lg:text-base flex-shrink-0 ml-2">{skill.percentage}%</span>
                   </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
+                  <div className="w-full bg-gray-700 rounded-full h-1.5 sm:h-2">
                     <motion.div
-                      className="bg-primary h-2 rounded-full"
+                      className="bg-primary h-1.5 sm:h-2 rounded-full"
                       initial={{ width: 0 }}
                       whileInView={{ width: `${skill.percentage}%` }}
                       transition={{ duration: 1, delay: index * 0.1 + 0.5 }}
@@ -125,7 +125,7 @@ export default function SkillsSection() {
 
         {/* Technology Tags */}
         <motion.div
-          className="mt-12 sm:mt-16"
+          className="mt-8 sm:mt-12 lg:mt-16"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
