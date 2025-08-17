@@ -17,10 +17,14 @@ export default function AboutSection() {
           >
             {/* Large Profile Picture */}
             <div className="relative">
-              <div className="w-80 h-80 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto">
-                <div className="w-72 h-72 bg-dark rounded-full flex items-center justify-center">
-                  <div className="w-64 h-64 bg-gradient-to-br from-gray-700 to-gray-800 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-4xl">MH</span>
+              <div className="w-80 h-80 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto p-1">
+                <div className="w-72 h-72 bg-dark rounded-full flex items-center justify-center p-1">
+                  <div className="w-64 h-64 rounded-full overflow-hidden">
+                    <img 
+                      src="/profile.jpg" 
+                      alt="Muhammad Hasnain" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
               </div>
