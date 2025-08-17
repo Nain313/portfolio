@@ -25,7 +25,7 @@ export default function AboutSection() {
                   <div className="w-64 h-64 md:w-80 md:h-80 lg:w-[24rem] lg:h-[24rem] rounded-full overflow-hidden relative">
                     {/* Test image display */}
                     <img 
-                      src="/profile.jpg" 
+                      src="/portfolio/profile.jpg" 
                       alt="Muhammad Hasnain" 
                       className="w-full h-full object-cover"
                       onError={(e) => {
