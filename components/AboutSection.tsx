@@ -1,15 +1,18 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 
 export default function AboutSection() {
+  const [imageError, setImageError] = useState(false)
+
   return (
     <section id="about" className="min-h-screen flex items-center justify-center relative py-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
           {/* Left Side - Profile Picture */}
           <motion.div
-            className="relative"
+            className="relative lg:col-span-2 flex justify-center"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -17,14 +20,29 @@ export default function AboutSection() {
           >
             {/* Large Profile Picture */}
             <div className="relative">
-              <div className="w-80 h-80 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto p-1">
-                <div className="w-72 h-72 bg-dark rounded-full flex items-center justify-center p-1">
-                  <div className="w-64 h-64 rounded-full overflow-hidden">
+              <div className="w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center mx-auto p-1">
+                <div className="w-72 h-72 md:w-88 md:h-88 lg:w-[26rem] lg:h-[26rem] bg-dark rounded-full flex items-center justify-center p-1">
+                  <div className="w-64 h-64 md:w-80 md:h-80 lg:w-[24rem] lg:h-[24rem] rounded-full overflow-hidden relative">
+                    {/* Test image display */}
                     <img 
                       src="/profile.jpg" 
                       alt="Muhammad Hasnain" 
                       className="w-full h-full object-cover"
+                      onError={(e) => {
+                        console.error('Profile image failed to load:', e);
+                        setImageError(true);
+                      }}
+                      onLoad={() => {
+                        console.log('Profile image loaded successfully');
+                      }}
                     />
+                    
+                    {/* Fallback if image fails */}
+                    {imageError && (
+                      <div className="absolute inset-0 bg-gradient-to-br from-gray-700 to-gray-800 flex items-center justify-center">
+                        <span className="text-white font-bold text-4xl md:text-5xl lg:text-6xl">MH</span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -33,7 +51,7 @@ export default function AboutSection() {
 
           {/* Right Side - Content */}
           <motion.div
-            className="space-y-8"
+            className="space-y-8 lg:col-span-3"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
